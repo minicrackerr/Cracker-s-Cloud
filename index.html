@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <!-- Hintergrundbild des Waldes -->
+    </div>
+    <div class="login-container">
+        <h1>Cracker-Cloud</h1>
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input">
+                    <input type="password" id="password" name="password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <img src="eye.png" alt="Toggle Password Visibility">
+                    </span>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var toggleBtn = document.querySelector(".toggle-password img");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleBtn.src = "eye-off.png";
+            } else {
+                passwordInput.type = "password";
+                toggleBtn.src = "eye.png";
+            }
+        }
+    </script>
+</body>
+</html>
